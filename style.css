@@ -5,7 +5,8 @@ body {
     background-position: center;
     align-items: center;
     justify-content: center;
-    margin-left:250px ;
+    margin:50px ;
+    margin-left:30px ;
 }
 
 .home {}
@@ -18,7 +19,7 @@ body {
 
 .home-view {
     background-color: rgba(0, 0, 0, 0.447);
-    width: 1407px;
+    width: 1807px;
     height: 1512px;
     border-radius: 30px;
     margin-bottom: 100px;
