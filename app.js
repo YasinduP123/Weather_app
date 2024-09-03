@@ -68,8 +68,9 @@ fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a655015224
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        let firstHour = data.forecast.forecastday[3].hour;
-        let cardBody = '';
+        
+        let firstHour = data.forecast.forecastday[0].hour;
+        let cardBody = "";
 
         firstHour.forEach((element, index) => {
             cardBody += `
@@ -86,31 +87,6 @@ fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a655015224
 
         document.getElementById("hourArray").innerHTML = cardBody;
     })
-    .catch(error => console.error('Error fetching weather data:', error));
-// fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data);
-//         let firstHour = data.forecast.forecastday[3].hour;
-//         let cardBody = '';
-
-//         firstHour.forEach((element, index) => {
-//             cardBody += `
-//                 <div class="col-sm-2 col">
-//                     <div class="forcast-today">
-//                         <p class="hours" id="hour${index + 1}">${element.time.substr(11, 5)}</p>
-//                         <hr class="inner-line-today-forcast">
-//                         <p class="forecast-details">${}°C</p>
-//                     </div>
-//                 </div>
-//             `;
-//         });
-
-//         document.getElementById("hourArray").innerHTML = cardBody;
-//     })
-//     .catch(error => console.error('Error fetching weather data:', error));
-
-
 
 
 
