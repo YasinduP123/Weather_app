@@ -69,12 +69,12 @@ fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a655015224
     .then(data => {
         console.log(data);
         
-        let firstHour = data.forecast.forecastday[0].hour;
+        let firstHour = data.forecast.forecastday[].hour;
         let cardBody = "";
 
         firstHour.forEach((element, index) => {
             cardBody += `
-                <div class="col">
+                <div class="col-sm-2 col">
                     <div class="forcast-today">
                         <p class="hours">${element.time.substr(11, 5)}</p>
                         <hr class="inner-line-today-forcast">
