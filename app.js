@@ -69,7 +69,7 @@ fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a655015224
     .then(data => {
         console.log(data);
         
-        let firstHour = data.forecast.forecastday[].hour;
+        let firstHour = data.forecast.forecastday[0].hour;
         let cardBody = "";
 
         firstHour.forEach((element, index) => {
