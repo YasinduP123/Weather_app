@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="home">
+        <div class="home-view" id="homeView">
+            <table>
+                <tr>
+                    <div class="main-status-card">
+                        <h2 class="show-temp" id="showCurrentTemp"></h2>
+                        <img src="img/wind.png" class="wind-img" alt="">
+                        <p class="wind-dir" id="currentWindDir"></p>
+                        <hr class="line-between-date-time">
+                        <p class="show-time" id="showCurrentTime"></p>
+                        <p class="show-date" id="showCurrentDate"></p>
+                    </div>
+                    <div class="theme-changer">
+                        <input type="radio" class="btn-check" name="options-outlined" id="darkMode" autocomplete="off"
+                            checked>
+                        <label class="btn btn-outline-dark" for="darkMode">Dark</label>
+
+                        <input type="radio" class="btn-check" name="options-outlined" id="lightMode" autocomplete="off">
+                        <label class="btn btn btn-outline-light" for="lightMode">Light</label>
+                    </div>
+                </tr>
+                <tr>
+                    <h1 class="current-status" id="currentSituation"></h1>
+                    <hr class="line-between-maincard-and-forecast">
+                </tr>
+                    <div class="row" id="hourArray">
+                        <div class="col">
+                            <div class="forcast-today">
+                                <p class="hours" id="hour1"></p>
+                                <hr class="inner-line-today-forcast">
+                            </div>
+                        </div>
+                    </div>
+                    
+        </div>
+        </table>
+    </div>
+
+    </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

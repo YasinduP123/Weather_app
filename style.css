@@ -1,0 +1,164 @@
+body {
+    background-attachment: fixed;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.home {}
+
+.btn-outline-secondary {
+    color: #000;
+    border-color: #000;
+}
+
+
+.home-view {
+    background-color: rgba(0, 0, 0, 0.447);
+    width: 1807px;
+    height: 1512px;
+    border-radius: 30px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    margin: 60px, 60px;
+    margin-left: 100px;
+    border: 2px solid white;
+}
+
+.main-status-card {
+    margin-top: 40px;
+    height: 550px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.585);
+    border-radius: 30px;
+    margin-left: 50px;
+    border: 2px solid white;
+}
+
+.show-temp {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 100px;
+    color: white;
+}
+
+.wind-img {
+    width: 250px;
+    margin-left: 120px;
+}
+
+.show-date {
+    color: rgb(171, 165, 165);
+    text-align: center;
+    font-size: 30px;
+    margin-top: -30px;
+}
+
+.show-time {
+    color: rgb(171, 165, 165);
+    text-align: center;
+    font-size: 90px;
+}
+
+
+.line-between-date-time {
+    color: white;
+    border: 1px solid white;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+
+.theme-changer {
+    margin-top: 40px;
+    width: 800px;
+    height: 40px;
+    display: flex;
+    justify-content: end;
+    margin-left: 80px;
+    align-items: baseline;
+    margin-top: -550px;
+
+
+}
+
+.forcast-today {
+    height: 180px;
+    width: 120px;
+    background-color: #000;
+    border: 2px solid white;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 30px;
+
+}
+
+.row{
+    margin-left: 60px;
+}
+
+.wind-dir {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+.line-between-maincard-and-forecast {
+    color: white;
+    border: 2px solid white;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    align-items: center;
+    margin-top: -50px;
+}
+
+.align-today-forecast{
+  background-color: aqua;
+  margin-right: 400px;
+}
+
+.line-of-today-forcast{
+    color: white;
+    border: 1px solid white;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
+}
+
+.current-status{
+    margin-top: 500px;
+    text-align: end;
+    margin-right: 300px;
+    margin-bottom: 60px;
+    color: rgb(74, 68, 68);
+    font-size: 80px;
+}
+
+.hours{
+    font-size: 20px;
+    color: white;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.inner-line-today-forcast {
+    color: white;
+    border: 1px solid white;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.forecast-details{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.forecast-img{
+    margin-left: 20px;
+    margin-top: -10px;
+}
