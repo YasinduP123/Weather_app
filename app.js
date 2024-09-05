@@ -6,8 +6,6 @@
 //http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Weather Alerts &days=10&aqi=yes&alerts=yes
 
 
-
-
 let itemCard = document.getElementById("itemCard");
 
 let showCurrentDate = document.getElementById("showCurrentDate");
@@ -27,11 +25,12 @@ fetch("https://api.weatherapi.com/v1/current.json?key=0f85b552d4524a16a655015224
         showCurrentDate.innerText = formattedDate;
         showCurrentTemp.innerText = data.current.temp_c + "°C";
         currentWindDir.innerText = data.current.wind_kph + "km/h" + " " + data.current.wind_degree + "°" + " " + data.current.wind_dir;
+
     })
 
 let currentSituation = document.getElementById("currentSituation");
 
-fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
+fetch("https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
     .then(res => res.json())
     .then(data => {
         console.log(data.current.condition.text);
@@ -39,33 +38,40 @@ fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a655015224
     });
 
 
+
 let lightMode = document.getElementById("lightMode").addEventListener("click", btnLightModeOnAction);
 let darkMode = document.getElementById("darkMode").addEventListener("click", btnDarkModeOnAction);
 let homeView = document.querySelector('.home-view');
-let forcastToday = document.querySelector('.forcast-today');
-let bodyLight = document.querySelector('body');
+let forcastToday = document.querySelector('today-forecast');
+let lineBetweenMaincardAndForecast = document.querySelector('.line-between-maincard-and-forecast');
+
 
 function btnDarkModeOnAction() {
+    loadForcast("rgba(0, 0, 0, 0.447)","white");
     homeView.style.backgroundColor = 'rgba(0, 0, 0, 0.447)';
-    homeView.style.color = 'white';
-    forcastToday.style.backgroundColor = '#000000'; // Keep the background consistent in dark mode
-    forcastToday.style.color = 'white';
+    lineBetweenMaincardAndForecast.style.color = "white";
+    lineBetweenMaincardAndForecast.style.border = "2px solid white";
 }
 
 function btnLightModeOnAction() {
+    loadForcast("rgba(255, 255, 255, 0.447)","black");
     homeView.style.backgroundColor = 'rgba(255, 255, 255, 0.447)';
-    homeView.style.color = 'black';
-    forcastToday.style.color = 'black';
-    forcastToday.style.backgroundColor = 'rgba(255, 255, 255, 0.447)';
-    bodyLight.style.color = 'white';
+    lineBetweenMaincardAndForecast.style.color = "2px solid black";
+    lineBetweenMaincardAndForecast.style.border = "2px solid black";
+
 
 }
+
 
 let hourArray = document.getElementById("hourArray");
 
 cardBody = "";
 
-fetch("https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
+function loadForcast(cssbgColor,cssFontColor){
+    console.log(cssbgColor);
+    
+    fetch("https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
+    
     .then(res => res.json())
     .then(data => {
         console.log(data);
@@ -76,20 +82,17 @@ fetch("https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a65501522
         firstHour.forEach(element => {
             cardBody += `
                 <div class="col-sm-1 col">
-                    <div class="forcast-today">
+                    <div class="today-forecast" style="background-color:${cssbgColor}; color:${cssFontColor};border:2px solid ${cssFontColor};">
                         <p class="hours">${element.time.substr(11, 5)}</p>
-                        <hr class="inner-line-today-forcast">
-                        <img src="${element.condition.icon}" alt="" srcset="" class="forecast-img">
+                        <hr class="inner-line-today-forcast" style="color:${cssFontColor}; border:2px solid ${cssFontColor};">
+                        <img src="${element.condition.icon}" class="forecast-img">
                         <p class="forecast-details">${element.temp_c}°C</p>
                     </div>
                 </div>
             `;
         });
-
         hourArray.innerHTML = cardBody;
     })
+}
 
-
-
-
-
+loadForcast("rgba(0, 0, 0, 0.447)","white");

@@ -22,6 +22,7 @@
                         <hr class="line-between-date-time">
                         <p class="show-time" id="showCurrentTime"></p>
                         <p class="show-date" id="showCurrentDate"></p>
+
                     </div>
                     <div class="theme-changer">
                         <input type="radio" class="btn-check" name="options-outlined" id="darkMode" autocomplete="off"
@@ -34,16 +35,27 @@
                 </tr>
                 <table class="nav-bar-item">
                     <tr class="nav-bar-item-adjust">
-                        <td class="align-nav-bar-item-data">Global Climate</td>
+                        <td >
+                            <Button class="align-nav-bar-item-data" type="button" id="btnOnLocationOnAction" style="color:rgb(168, 161, 161);">On Location</Button>
+                        </td>
                     </tr>
                     <tr class="nav-bar-item-adjust">
-                        <td class="align-nav-bar-item-data">Today Highlights</td>
+                        <td >
+                            <Button class="align-nav-bar-item-data" type="button" id="btnGlobalClimateOnAction"  style="color:rgb(168, 161, 161);">Global Climate</Button>
+                        </td>
                     </tr>
                     <tr class="nav-bar-item-adjust">
-                        <td class="align-nav-bar-item-data">7 days</td>
+                        <td>
+                            <button  class="align-nav-bar-item-data" id="btnTodayHighlightsOnAction"  style="color:rgb(168, 161, 161);">Today Highlights</button>
+                        </td>
+                    </tr>
+                    <tr class="nav-bar-item-adjust">
+                        <td>
+                            <button class="align-nav-bar-item-data" id="btn7daysOnAction"  style="color:rgb(168, 161, 161);">7 days</button>
+                        </td>
                     </tr>
                 </table>
-                <div class="align-current-status">
+                <div class="align-current-status" >
                     <tr>
                         <td>
                             <h1 class="current-status" id="currentSituation"></h1>
@@ -64,6 +76,7 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="nav.js"></script>
 </body>
 
 </html>

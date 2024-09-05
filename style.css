@@ -87,16 +87,19 @@ body {
 }
 
 .forcast-today {
+
+    
+}
+
+.today-forecast{
     height: 180px;
     width: 90px;
-    background-color: #000;
     border: 2px solid white;
     margin-left: 30px;
     margin-top: 10px;
     border-radius: 30px;
-    
+    color: white;
 }
-
 
 .wind-dir {
     color: white;
@@ -105,13 +108,12 @@ body {
 }
 
 .line-between-maincard-and-forecast {
-    color: white;
-    border: 2px solid white;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 20px;
     align-items: center;
     margin-top: -50px;
+    border: 2px solid rgb(255, 255, 255)
 }
 
 .align-today-forecast{
@@ -137,21 +139,18 @@ body {
 
 .hours{
     font-size: 20px;
-    color: white;
     margin-left: 20px;
     margin-top: 10px;
 }
 .inner-line-today-forcast {
-    color: white;
-    border: 1px solid white;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
+    
 }
 
 .forecast-details{
     font-size: 20px;
-    color: white;
     text-align: center;
 }
 
@@ -168,13 +167,10 @@ body {
     padding-right: 40px;
     align-items: end;
     vertical-align: middle;
-    margin-top: 200px;        
+    margin-top: 80px;        
     border-collapse: separate;
     border-spacing:0 25px;
 
-}
-
-.nav-bar-item.tr{
 }
 
 .align-current-status{
