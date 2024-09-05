@@ -179,8 +179,21 @@ body {
 
 .align-nav-bar-item-data{
  padding: 20px;
- background-color: rgba(110, 110, 110, 0.378);
  border-radius: 30px;
+ color : white;
+ background-color: rgb(0, 0, 0);
+ border: 3px solid white;
+
+
+}
+
+.align-nav-bar-item-data:hover{
+    background-color: rgb(0, 0, 0);
+    box-shadow: 5px 5px 5px 5px rgb(151, 76, 76)
+}
+
+.btn-outline-dark{
+    color: #ffffff;
 }
 
 .nav-bar-item-adjust{
