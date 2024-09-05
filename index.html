@@ -32,19 +32,30 @@
                         <label class="btn btn btn-outline-light" for="lightMode">Light</label>
                     </div>
                 </tr>
-                <tr>
-                    <h1 class="current-status" id="currentSituation"></h1>
-                    <hr class="line-between-maincard-and-forecast">
-                </tr>
-                    <div class="row" id="hourArray">
-                        <div class="col">
-                            <div class="forcast-today">
-                                <p class="hours" id="hour1"></p>
-                                <hr class="inner-line-today-forcast">
-                            </div>
-                        </div>
-                    </div>
-                    
+                <table class="nav-bar-item">
+                    <tr class="nav-bar-item-adjust">
+                        <td class="align-nav-bar-item-data">Global Climate</td>
+                    </tr>
+                    <tr class="nav-bar-item-adjust">
+                        <td class="align-nav-bar-item-data">Today Highlights</td>
+                    </tr>
+                    <tr class="nav-bar-item-adjust">
+                        <td class="align-nav-bar-item-data">7 days</td>
+                    </tr>
+                </table>
+                <div class="align-current-status">
+                    <tr>
+                        <td>
+                            <h1 class="current-status" id="currentSituation"></h1>
+                            <hr class="line-between-maincard-and-forecast">
+                        </td>
+                    </tr>
+                </div>
+                <div class="row hour-array" id="hourArray"></div>
+
+                <div class="nav-bar">
+
+                </div>
         </div>
         </table>
     </div>

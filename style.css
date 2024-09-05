@@ -19,7 +19,7 @@ body {
 .home-view {
     background-color: rgba(0, 0, 0, 0.447);
     width: 1807px;
-    height: 1512px;
+    height: 1112px;
     border-radius: 30px;
     margin-bottom: 100px;
     margin-top: 100px;
@@ -94,12 +94,9 @@ body {
     margin-left: 30px;
     margin-top: 10px;
     border-radius: 30px;
-
+    
 }
 
-.row{
-    margin-left: 60px;
-}
 
 .wind-dir {
     color: white;
@@ -119,7 +116,6 @@ body {
 
 .align-today-forecast{
   background-color: aqua;
-  margin-right: 400px;
 }
 
 .line-of-today-forcast{
@@ -162,4 +158,41 @@ body {
 .forecast-img{
     margin-left: 10px;
     margin-top: -10px;
+}
+
+.nav-bar-item{
+    color : rgb(255, 255, 255);
+    display: grid;
+    justify-content: end;
+    text-align: center;
+    padding-right: 40px;
+    align-items: end;
+    vertical-align: middle;
+    margin-top: 200px;        
+    border-collapse: separate;
+    border-spacing:0 25px;
+
+}
+
+.nav-bar-item.tr{
+}
+
+.align-current-status{
+    margin-top: -500px;
+}
+
+.align-nav-bar-item-data{
+ padding: 20px;
+ background-color: rgba(110, 110, 110, 0.378);
+ border-radius: 30px;
+}
+
+.nav-bar-item-adjust{
+    margin-top: 40px;
+    padding-top: 30px;
+
+}
+
+.align-nav-bar-item-data{
+    font-size: 20px;
 }

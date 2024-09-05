@@ -42,39 +42,40 @@ fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a655015224
 let lightMode = document.getElementById("lightMode").addEventListener("click", btnLightModeOnAction);
 let darkMode = document.getElementById("darkMode").addEventListener("click", btnDarkModeOnAction);
 let homeView = document.querySelector('.home-view');
+let forcastToday = document.querySelector('.forcast-today');
+let bodyLight = document.querySelector('body');
 
 function btnDarkModeOnAction() {
     homeView.style.backgroundColor = 'rgba(0, 0, 0, 0.447)';
     homeView.style.color = 'white';
+    forcastToday.style.backgroundColor = '#000000'; // Keep the background consistent in dark mode
+    forcastToday.style.color = 'white';
 }
 
 function btnLightModeOnAction() {
     homeView.style.backgroundColor = 'rgba(255, 255, 255, 0.447)';
     homeView.style.color = 'black';
+    forcastToday.style.color = 'black';
+    forcastToday.style.backgroundColor = 'rgba(255, 255, 255, 0.447)';
+    bodyLight.style.color = 'white';
+
 }
 
-let today1 = document.getElementById("today1");
-let today2 = document.getElementById("today2");
-let today3 = document.getElementById("today3");
-let today4 = document.getElementById("today4");
-let today5 = document.getElementById("today5");
-let today6 = document.getElementById("today6");
-let today7 = document.getElementById("today7");
 let hourArray = document.getElementById("hourArray");
 
 cardBody = "";
 
-fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
+fetch("https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        
+
         let firstHour = data.forecast.forecastday[0].hour;
         let cardBody = "";
 
-        firstHour.forEach((element, index) => {
+        firstHour.forEach(element => {
             cardBody += `
-                <div class="col-sm-2 col">
+                <div class="col-sm-1 col">
                     <div class="forcast-today">
                         <p class="hours">${element.time.substr(11, 5)}</p>
                         <hr class="inner-line-today-forcast">
@@ -85,7 +86,7 @@ fetch("http://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a655015224
             `;
         });
 
-        document.getElementById("hourArray").innerHTML = cardBody;
+        hourArray.innerHTML = cardBody;
     })
 
 
