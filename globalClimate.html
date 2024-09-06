@@ -14,30 +14,95 @@
 <body>
     <div class="home">
         <div class="home-view" id="homeView">
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <form class="d-flex search-bar-group" role="search">
-                        <input class="form-control me-2 search-bar" id="searchBar" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-dark btn-search" id="btnSearchOnAction" type="button">Search</button>
-                    </form>
-                </div>
-            </nav>
-            <div class="global-climate-header-group">
-                <div class="global-climate-header" id="txtClimateHeader">
+            <div class="nav-bar-align">
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <form class="d-flex search-bar-group" role="search">
+                            <input class="form-control me-2 search-bar" id="searchBar" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-dark btn-search" id="btnSearchOnAction" type="button">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <div class="location-name-display" id="txtLocation">
+                
+            </div>
+            <table class="nav-bar-item">
+                <tr class="nav-bar-item-adjust">
+                    <td>
+                        <button type="button" class="btn btn-outline-dark align-nav-bar-item-data" id="btnHomeOnAction"
+                            style="color:rgb(168, 161, 161);">Home</button>
+                    </td>
+                </tr>
+                <tr class="nav-bar-item-adjust">
+                    <td>
+                        <button type="button" class="btn btn-outline-dark align-nav-bar-item-data"
+                            id="btnOnLocationOnAction" style="color:rgb(168, 161, 161);">Location</button>
+                    </td>
+                </tr>
 
+            </table>
+            
+
+            <div class="global-status-card-group">
+                <div class="row" style="margin-top:500px">
+                    <div class="col-6">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">Humidity</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="humidityPercentage"></h1>
+                            </div>
+                            <img src="img/humidity.png" alt="Humidity Icon" height="100px"
+                                style="margin-left: 170px;margin-top: 0px;">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">UV Index</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="uvIndex"></h1>
+                            </div>
+                            <img src="img/uvIndex.png" alt="Humidity Icon" height="100px">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">Temperature</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="temperature"></h1>
+                            </div>
+                            <img src="img/thermometer.png" alt="" height="100px" style="margin-left: 170px;margin-top: 0px;">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">Wind Speed</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="windSpeed"></h1>
+                            </div>
+                            <img src="img/wind.png" alt="" height="100px" style="margin-left: 170px;margin-top: 0px;">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="theme-changer">
-                <input type="radio" class="btn-check" name="options-outlined" id="darkMode" autocomplete="off" checked>
-                <label class="btn btn-outline-dark" for="darkMode">Dark</label>
-
-                <input type="radio" class="btn-check" name="options-outlined" id="lightMode" autocomplete="off">
-                <label class="btn btn-outline-light" for="lightMode">Light</label>
+            <div class="global-weather-status">
+                <img src="img/sunny.png" id="currentSituationIconInSearchCountry" alt="" srcset="" height="140px" style="margin-top:40px ;margin-left: 120px;">
+                <h2 style="text-align: center;color: white;margin-top: -10px;" id="currentStatusInSearchCountry">Sunny</h2>
+                <img src="" alt="" height="70px" style="margin-left: 150px;margin-top: 30px;" id="windIcon">
+                <p style="text-align: center;color: white;" id="windDirection">23mph NorthWest</p>
+                <h1 style="text-align: center;color: white; font-size: 60px;" id="currentTimeInSearchCountry">13:12</h1>
+                <p style="text-align: center;color: white;" id="currentDateInSearchCountry">9 September 2024</p>
             </div>
         </div>
+
     </div>
 
-<script src="globalCimate.js"></script>
+    <script src="globalCimate.js"></script>
+    <!-- <script src="app.js"></script> -->
 </body>
 
 </html>

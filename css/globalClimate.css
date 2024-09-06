@@ -1,44 +1,103 @@
-.search-bar-group{
+.search-bar-group {
   background-color: rgba(140, 136, 136, 0.575);
   padding: 20px;
   border-radius: 30px;
   width: 600px;
-  margin-left: 500px;
+  margin-left: 600px;
   margin-top: 40px;
 }
 
-.search-bar{
-  background-color: rgba(35, 33, 33, 0.241) ;
-  border-radius: 30px ;
+.search-bar {
+  background-color: rgba(35, 33, 33, 0.241);
+  border-radius: 30px;
+
 }
 
-.search-bar::placeholder{
+.search-bar::placeholder {
   color: white;
 }
-.search-bar:focus, textarea:focus { 
-  background-color: black; 
-  color: white;
-} 
 
-.btn-search{
-  border: 2px solid white;
-}
-
-.search-bar{
+.search-bar:focus,
+textarea:focus {
   background-color: black;
   color: white;
 }
 
-.global-climate-header-group,.climate-header{
+.btn-search {
+  border: 2px solid white;
+}
+
+.search-bar {
+  background-color: black;
+  color: white;
+}
+
+.global-climate-header-group,
+.climate-header {
   color: white;
   text-align: center;
-  margin-top: 40px;
   font-size: 30px;
 }
 
-.line-below-searchBar{
+.line-below-searchBar {
   color: white;
   border: 2px solid white;
-  margin-left:340px;
-  margin-right:340px;
+  margin-left: 340px;
+  margin-right: 340px;
+}
+
+.global-humidity {
+  height: 250px;
+  text-align: center;
+  color: white;
+  margin-left: 100px;
+  margin-top: 100px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.status-humidity {
+  padding-top: 20px;
+
+}
+
+.humidity-topic-line {
+  border: 2px solid white;
+}
+
+.status-card-group {
+  margin-left: 100px;
+  width: 60px;
+  margin-top: -400px;
+
+}
+
+.global-climate-header-group {
+  margin-top: -600px;
+
+}
+
+.global-status-card-group {
+  width: 900px;
+  margin-top: -600px;
+}
+
+.global-weather-status {
+  background-color: rgba(146, 146, 146, 0.353);
+  height: 600px;
+  width: 400px;
+  margin-left: 1000px;
+  margin-top: -600px;
+  border-radius: 30px;
+
+}
+
+.nav-bar-align {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar-item{
+  margin-top: -100px;
 }
