@@ -10,3 +10,4 @@ function geoFindMe() {
   }
   
   document.getElementById("btnOnLocationOnAction").addEventListener("click", geoFindMe);
+

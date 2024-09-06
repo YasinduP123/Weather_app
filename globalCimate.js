@@ -24,15 +24,15 @@ function btnSearchOnAction() {
 document.getElementById("btnOnLocationOnAction").addEventListener("click",btnOnLocationOnAction)
 
 function btnOnLocationOnAction(){
-    searchBar = document.getElementById("searchBar").value;
-
-    fetch(`https://restcountries.com/v3.1/name/${searchBar}`)
+    fetch(`https://nominatim.openstreetmap.org/search?q=${searchBar}&format=json`)
     .then(res => res.json())
-    .then(data=>{
-        console.log(data);
-        window.location.href = data.maps.googleMaps;
-    
+    .then(data => {
+        const { lat, lon } = data[0];
+        const osmUrl = `https://www.openstreetmap.org/#map=18/${lat}/${lon}`;
+        console.log(osmUrl);
+        window.location.href = osmUrl
     });
+    
 }
 
 function climateLoader(){
@@ -51,11 +51,6 @@ function climateLoader(){
         document.getElementById("currentDateInSearchCountry").innerHTML = data.location.localtime.substr(0,10);
     });
 }
-
-
-
-
-
 
 
 document.getElementById("btnHomeOnAction").addEventListener("click",btnHomeOnAction);
