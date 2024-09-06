@@ -1,0 +1,44 @@
+.search-bar-group{
+  background-color: rgba(140, 136, 136, 0.575);
+  padding: 20px;
+  border-radius: 30px;
+  width: 600px;
+  margin-left: 500px;
+  margin-top: 40px;
+}
+
+.search-bar{
+  background-color: rgba(35, 33, 33, 0.241) ;
+  border-radius: 30px ;
+}
+
+.search-bar::placeholder{
+  color: white;
+}
+.search-bar:focus, textarea:focus { 
+  background-color: black; 
+  color: white;
+} 
+
+.btn-search{
+  border: 2px solid white;
+}
+
+.search-bar{
+  background-color: black;
+  color: white;
+}
+
+.global-climate-header-group,.climate-header{
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+.line-below-searchBar{
+  color: white;
+  border: 2px solid white;
+  margin-left:340px;
+  margin-right:340px;
+}

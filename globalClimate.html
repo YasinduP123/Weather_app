@@ -4,37 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Climate Search</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/globalClimate.css">
 </head>
 
 <body>
     <div class="home">
         <div class="home-view" id="homeView">
-            <table>
-                <tr>
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <form class="d-flex search-bar-group" role="search">
+                        <input class="form-control me-2 search-bar" id="searchBar" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-dark btn-search" id="btnSearchOnAction" type="button">Search</button>
+                    </form>
+                </div>
+            </nav>
+            <div class="global-climate-header-group">
+                <div class="global-climate-header" id="txtClimateHeader">
 
-                    <div class="theme-changer">
-                        <input type="radio" class="btn-check" name="options-outlined" id="darkMode" autocomplete="off"
-                            checked>
-                        <label class="btn btn-outline-dark" for="darkMode">Dark</label>
+                </div>
+            </div>
+            <div class="theme-changer">
+                <input type="radio" class="btn-check" name="options-outlined" id="darkMode" autocomplete="off" checked>
+                <label class="btn btn-outline-dark" for="darkMode">Dark</label>
 
-                        <input type="radio" class="btn-check" name="options-outlined" id="lightMode" autocomplete="off">
-                        <label class="btn btn btn-outline-light" for="lightMode">Light</label>
-                    </div>
-                </tr>
-
+                <input type="radio" class="btn-check" name="options-outlined" id="lightMode" autocomplete="off">
+                <label class="btn btn-outline-light" for="lightMode">Light</label>
+            </div>
         </div>
-        </table>
     </div>
 
-    </div>
-    </div>
-
-    <script src="app.js"></script>
-    <script src="nav.js"></script>
+<script src="globalCimate.js"></script>
 </body>
 
 </html>

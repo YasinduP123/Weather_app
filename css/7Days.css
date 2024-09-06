@@ -1,0 +1,133 @@
+/* General styles */
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+#main {
+    position: relative;
+    list-style: none;
+    background: #171717;
+    font-weight: 400;
+    font-size: 0;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0;
+    margin: 50px auto;
+    color: white;
+    width: 400px;
+}
+
+#main li {
+    font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+    padding: 15px 20px;
+    cursor: pointer;
+    z-index: 5;
+    min-width: 120px;
+    width: 400px;
+}
+
+li {
+    margin: 0;
+}
+
+/* Dropdown styles */
+.drop {
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    top: 48px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s ease;
+}
+
+.drop div {
+    position: relative;
+}
+
+.drop li {
+    display: block;
+    padding: 0;
+    width: 100%;
+    background: #404040 !important;
+}
+
+/* Hover effect for Select Day */
+#main li:first-child:hover .drop {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Staggered transition for buttons */
+.drop .btn {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+#main li:first-child:hover .btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Adding delays for staggered transition */
+.drop div .btn:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.drop div .btn:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.drop div .btn:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.drop div .btn:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.drop div .btn:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.drop div .btn:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.drop div .btn:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+/* Marker styles */
+#marker {
+    height: 6px;
+    background: #ffffff !important;
+    position: absolute;
+    bottom: 0;
+    width: 400px;
+    z-index: 2;
+    transition: all 0.35s;
+}
+
+/* Button styles */
+.btn {
+    width: 400px;
+    height: 60px;
+    border: 2px solid black;
+}
+
+/* Navigation styles */
+.day-nav {
+    display: flex;
+    justify-content: left;
+    margin-right: 1300px;
+}
