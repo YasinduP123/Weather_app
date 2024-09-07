@@ -58,3 +58,9 @@ function fetchClimateDataForDay(selectedDay) {
             }
         })
 }
+
+document.getElementById("btnHomeOnAction7Days").addEventListener("click",btnHomeOnAction7Days);
+
+function btnHomeOnAction7Days(){
+    window.location.href = 'index.html'
+}
