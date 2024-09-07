@@ -48,7 +48,12 @@ function climateLoader(){
         document.getElementById("currentStatusInSearchCountry").innerText = data.current.condition.text;
         document.getElementById("windDirection").innerText= data.current.wind_mph+"mph"+" "+data.current.wind_dir;
         document.getElementById("currentTimeInSearchCountry").innerHTML = data.location.localtime.substr(11,16);
-        document.getElementById("currentDateInSearchCountry").innerHTML = data.location.localtime.substr(0,10);
+        dateStr = data.location.localtime.substr(0, 10);
+        let date = new Date(dateStr);
+        let options = { day: '2-digit', month: 'long', year: 'numeric' };
+        let formattedDate = date.toLocaleDateString('en-GB', options);
+        document.getElementById("currentDateInSearchCountry").innerText = formattedDate;
+
     });
 }
 
