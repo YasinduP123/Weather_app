@@ -18,6 +18,7 @@ body {
     margin: 50px auto;
     color: white;
     width: 400px;
+    margin-left: 40px;
 }
 
 #main li {
@@ -130,4 +131,24 @@ li {
     display: flex;
     justify-content: left;
     margin-right: 1300px;
+}
+
+.global-status-card-group-days{
+    margin-top: -600px;
+    margin-right: 100px;
+}
+
+.location-name-display{
+    margin-top: -100px;
+}
+
+.show-date-select{
+    color:white;
+}
+.show-date-line{
+    color:white;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-bottom: 50px;
+    border: 2px solid white;
 }

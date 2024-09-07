@@ -9,6 +9,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/7Days.css">
+    <link rel="stylesheet" href="css/todayHighlight.css">
+    <link rel="stylesheet" href="css/globalClimate.css">
 
 </head>
 
@@ -24,7 +26,7 @@
                                 <button class="btn btn-secondary" id="btnMondayOnAction">
                                     Monday
                                 </button>
-                                <button class="btn btn-secondary" id="btnTuesedayOnAction">
+                                <button class="btn btn-secondary" id="btnTuesdayOnAction">
                                     Tuesday
                                 </button>
                                 <button class="btn btn-secondary" id="btnWednesdayOnAction">
@@ -48,30 +50,85 @@
                     <div id="marker"></div>
                 </ul>
             </nav>
-            <table>
-                <tr>
+            <div class="nav-bar-align" style="margin-top: 100px;">
+            </div>
+            <div class="location-name-display" id="statusHeader">
+                <h1 class="show-date-select" id="showDateSelected"></h1>
+                <hr class="show-date-line">
+            </div>
+            
 
-                    <div class="theme-changer">
-                        <input type="radio" class="btn-check" name="options-outlined" id="darkMode" autocomplete="off" checked>
-                        <label class="btn btn-outline-dark" for="darkMode">Dark</label>
-
-                        <input type="radio" class="btn-check" name="options-outlined" id="lightMode" autocomplete="off">
-                        <label class="btn btn btn-outline-light" for="lightMode">Light</label>
+            <div class="global-status-card-group-days">
+                <div class="row" style="margin-top:500px">
+                    <div class="col-4">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">Humidity (Average)</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="daysHumidityPercentage"></h1>
+                            </div>
+                            <img src="img/humidity.png" alt="Humidity Icon" height="100px"
+                                style="margin-left: 170px;margin-top: 0px;">
+                        </div>
                     </div>
-                </tr>
-                <tr>
-
-                </tr>
-
+                    <div class="col-4">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">UV Index</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="daysUvIndex"></h1>
+                            </div>
+                            <img src="img/uvIndex.png" alt="Humidity Icon" height="100px">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">Temperature (Average)</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="daysTemperature"></h1>
+                            </div>
+                            <img src="img/thermometer.png" alt="" height="100px" style="margin-left: 170px;margin-top: 0px;">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">Wind Speed (Maximum)</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="daysWindSpeed"></h1>
+                            </div>
+                            <img src="img/wind.png" alt="" height="100px" style="margin-left: 170px;margin-top: 0px;">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity"> Daily Chance of Rain</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" id="dailyChanceToRain"></h1>
+                            </div>
+                            <img src="img/rainChance.png" alt="" height="150px" style="margin-left: 170px;margin-top: 0px;">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="global-humidity">
+                            <h2 class="status-humidity">Condition</h2>
+                            <hr style="border : 2px solid white">
+                            <div style="height: 40px; width: 40px; margin-left: 130px;">
+                                <h1 class="humidity-percentage" style="margin-left: -60px;" id="daysCondition"></h1>
+                            </div>
+                            <img src="" alt="" height="100px" style="margin-left: 170px;margin-top: 0px;" id="daysStatusIcon">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </table>
-    </div>
 
     </div>
     </div>
 
-    <script src="app.js"></script>
-    <script src="nav.js"></script>
+    <script src="7Days.js"></script>
 </body>
 
 </html>

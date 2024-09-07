@@ -26,7 +26,7 @@ fetch("https://api.weatherapi.com/v1/current.json?key=0f85b552d4524a16a655015224
         showCurrentTemp.innerText = data.current.temp_c + "°C";
         currentWindDir.innerText = data.current.wind_kph + "km/h" + " " + data.current.wind_degree + "°" + " " + data.current.wind_dir;
 
-    })
+})
 
 let currentSituation = document.getElementById("currentSituation");
 
