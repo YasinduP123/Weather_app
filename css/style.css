@@ -6,15 +6,21 @@ body {
     align-items: center;
     justify-content: center;
     margin-left:30px ;
+    display: flex;
+    overflow-x: hidden; 
+    justify-content: center;
+    justify-self: center;
+    
 }
 
 .btn-outline-secondary {
     color: #000;
-    border-color: #000;
+    border-color: #1d1919;
 }
 
 
 .home-view {
+
     background-color: rgba(0, 0, 0, 0.447);
     width: 1507px;
     height: 1112px;
@@ -24,6 +30,8 @@ body {
     margin: 60px, 60px;
     margin-left: 50px;
     border: 2px solid white;
+    background-attachment: fixed;
+    margin-right: 80px;
 }
 
 .main-status-card {
