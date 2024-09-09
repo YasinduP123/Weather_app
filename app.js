@@ -13,30 +13,59 @@ let showCurrentTime = document.getElementById("showCurrentTime");
 let showCurrentTemp = document.getElementById("showCurrentTemp");
 let currentWindDir = document.getElementById("currentWindDir");
 
-fetch("https://api.weatherapi.com/v1/current.json?key=0f85b552d4524a16a6550152242908&q=Sri Lanka&aqi=no")
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        showCurrentTime.innerHTML = data.location.localtime.substr(11, 16);
-        dateStr = data.location.localtime.substr(0, 10);
-        let date = new Date(dateStr);
-        let options = { day: '2-digit', month: 'long', year: 'numeric' };
-        let formattedDate = date.toLocaleDateString('en-GB', options);
-        showCurrentDate.innerText = formattedDate;
-        showCurrentTemp.innerText = data.current.temp_c + "°C";
-        currentWindDir.innerText = data.current.wind_kph + "km/h" + " " + data.current.wind_degree + "°" + " " + data.current.wind_dir;
 
-})
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        console.log("Latitude: " + latitude);
+        console.log("Longitude: " + longitude);
 
-let currentSituation = document.getElementById("currentSituation");
 
-fetch("https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
-    .then(res => res.json())
-    .then(data => {
-        console.log(data.current.condition.text);
-        currentSituation.innerText = data.current.condition.text;
+
+        fetch(`https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=${latitude},${longitude}&days=10&aqi=yes&alerts=yes`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                showCurrentTime.innerHTML = data.location.localtime.substr(11, 16);
+                dateStr = data.location.localtime.substr(0, 10);
+                let date = new Date(dateStr);
+                let options = { day: '2-digit', month: 'long', year: 'numeric' };
+                let formattedDate = date.toLocaleDateString('en-GB', options);
+                showCurrentDate.innerText = formattedDate;
+                showCurrentTemp.innerText = data.current.temp_c + "°C";
+                currentWindDir.innerText = data.current.wind_kph + "km/h" + " " + data.current.wind_degree + "°" + " " + data.current.wind_dir;
+
+            })
+    }, function (error) {
+        console.error("Error occurred: " + error.message);
     });
+} else {
+    console.log("Geolocation is not supported by this browser.");
+}
 
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        console.log("Latitude: " + latitude);
+        console.log("Longitude: " + longitude);
+
+        let currentSituation = document.getElementById("currentSituation");
+
+        fetch(`https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=${latitude},${longitude}&days=10&aqi=yes&alerts=yes`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.current.condition.text);
+                currentSituation.innerText = data.current.condition.text;
+            });
+    }, function (error) {
+        console.error("Error occurred: " + error.message);
+    });
+} else {
+    console.log("Geolocation is not supported by this browser.");
+}
 
 
 let lightMode = document.getElementById("lightMode").addEventListener("click", btnLightModeOnAction);
@@ -47,14 +76,14 @@ let lineBetweenMaincardAndForecast = document.querySelector('.line-between-mainc
 
 
 function btnDarkModeOnAction() {
-    loadForcast("rgba(0, 0, 0, 0.447)","white");
+    loadForcast("rgba(0, 0, 0, 0.447)", "white");
     homeView.style.backgroundColor = 'rgba(0, 0, 0, 0.447)';
     lineBetweenMaincardAndForecast.style.color = "white";
     lineBetweenMaincardAndForecast.style.border = "2px solid white";
 }
 
 function btnLightModeOnAction() {
-    loadForcast("rgba(255, 255, 255, 0.447)","black");
+    loadForcast("rgba(255, 255, 255, 0.447)", "black");
     homeView.style.backgroundColor = 'rgba(255, 255, 255, 0.447)';
     lineBetweenMaincardAndForecast.style.color = "2px solid black";
     lineBetweenMaincardAndForecast.style.border = "2px solid black";
@@ -63,24 +92,32 @@ function btnLightModeOnAction() {
 }
 
 
+
 let hourArray = document.getElementById("hourArray");
 
 cardBody = "";
 
-function loadForcast(cssbgColor,cssFontColor){
+function loadForcast(cssbgColor, cssFontColor) {
     console.log(cssbgColor);
-    
-    fetch("https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Colombo&days=10&aqi=yes&alerts=yes")
-    
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
 
-        let firstHour = data.forecast.forecastday[0].hour;
-        let cardBody = "";
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            console.log("Latitude: " + latitude);
+            console.log("Longitude: " + longitude);
 
-        firstHour.forEach(element => {
-            cardBody += `
+            fetch(`https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=${latitude},${longitude}&days=10&aqi=yes&alerts=yes`)
+
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+
+                    let firstHour = data.forecast.forecastday[0].hour;
+                    let cardBody = "";
+
+                    firstHour.forEach(element => {
+                        cardBody += `
                 <div class="col-sm-1 col">
                     <div class="today-forecast" style="background-color:${cssbgColor}; color:${cssFontColor};border:2px solid ${cssFontColor};">
                         <p class="hours">${element.time.substr(11, 5)}</p>
@@ -90,9 +127,15 @@ function loadForcast(cssbgColor,cssFontColor){
                     </div>
                 </div>
             `;
+                    });
+                    hourArray.innerHTML = cardBody;
+                })
+        }, function (error) {
+            console.error("Error occurred: " + error.message);
         });
-        hourArray.innerHTML = cardBody;
-    })
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
 }
 
-loadForcast("rgba(0, 0, 0, 0.447)","white");
+loadForcast("rgba(0, 0, 0, 0.447)", "white");

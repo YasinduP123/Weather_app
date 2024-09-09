@@ -15,7 +15,16 @@ function geoFindMe() {
 
 
 function climateLoader(){
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=Sri Lanka&days=7&aqi=yes&alerts=yes`)
+  
+  // Check if the browser supports Geolocation API
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    console.log("Latitude: " + latitude);
+    console.log("Longitude: " + longitude);
+  
+  fetch(`https://api.weatherapi.com/v1/forecast.json?key=0f85b552d4524a16a6550152242908&q=${latitude},${longitude}&days=10&aqi=yes&alerts=yes`)
     .then(res=>res.json())
     .then(data=>{
         console.log(data);
@@ -34,11 +43,34 @@ function climateLoader(){
         document.getElementById("currentDateInSearchCountry").innerText = formattedDate;
 
     });
+
+  }, function(error) {
+    console.error("Error occurred: " + error.message);
+  });
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
 }
 
 climateLoader();
 
+
+
 document.getElementById("btnHomeOnAction").addEventListener("click",btnHomeOnAction);
 function btnHomeOnAction(){
     window.location.href='index.html';
+}
+
+// Check if the browser supports Geolocation API
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    console.log("Latitude: " + latitude);
+    console.log("Longitude: " + longitude);
+  }, function(error) {
+    console.error("Error occurred: " + error.message);
+  });
+} else {
+  console.log("Geolocation is not supported by this browser.");
 }
