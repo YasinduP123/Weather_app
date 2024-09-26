@@ -1,4 +1,4 @@
-body {
+html,body {
     background-attachment: fixed;
     background-image: url('background.png');
     background-size: cover;
@@ -22,7 +22,7 @@ body {
 .home-view {
 
     background-color: rgba(0, 0, 0, 0.447);
-    width: 1507px;
+    width: 1307px;
     height: 1112px;
     border-radius: 30px;
     margin-bottom: 100px;
