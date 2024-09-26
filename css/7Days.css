@@ -245,8 +245,10 @@ li {
     }
 }
 
+@media (max-width : 320px) {
+        
+    
 
-@media (max-width:450px) {
 
     body,html{
         font-family: 'Open Sans', sans-serif;
@@ -384,8 +386,9 @@ li {
     }
     
     .global-status-card-group-days {
-        margin-top: -600px;
-        margin-right: 100px;
+        margin-top: 30px;
+        margin-right: -70px;
+
     }
     
     .location-name-display {
@@ -396,7 +399,9 @@ li {
     .show-date-line {
         color: white;
         margin-bottom: 50px;
-        border: 2px solid rgb(239, 0, 0);
+        margin-left: 40px;
+        margin-right: 40px;
+        border: 2px solid rgb(110, 110, 110);
     }
     
     .nav-item-7days {
@@ -433,24 +438,245 @@ li {
     
     .row {
         margin-top: 00px;
-        margin-left: -50px;
+        margin-left: -20px;
         width: 230px;
     }
     .home-view {
         margin-left:80px;
-        width: 250px;
-       margin-top: auto; 
-       height: 2500px;
+        width: 350px;
+        margin-top: auto; 
+        height: 2500px;
         margin-top:50px
     }
 
     .global-status-card-group-days {
-        margin-top: -70px; 
-        margin-left: 00px;
+        margin-left: 10px;
 
     }
 
+    .col{
+        
+    }
+
     .global-humidity{
+        
+    }    
+
+}
+
+@media (max-width:450px) {
+
+
+
+    body,html{
+        font-family: 'Open Sans', sans-serif;
         text-align: center;
+        overflow-x: hidden;
+        margin: 0px;
+    }    
+
+    #main {
+        position: relative;
+        list-style: none;
+        background: #171717;
+        font-weight: 400;
+        font-size: 0;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0;
+        margin: 50px auto;
+        color: white;
+        width: 400px;
+        margin-left: 40px;
+    }
+    
+    #main li {
+        font-size: 0.8rem;
+        display: inline-block;
+        position: relative;
+        padding: 15px 20px;
+        cursor: pointer;
+        z-index: 5;
+        min-width: 120px;
+        width: 100px;
+    }
+    
+    li {
+        margin: 0;
+    }
+    
+    /* Dropdown styles */
+    .drop {
+        overflow: hidden;
+        list-style: none;
+        position: absolute;
+        padding: 0;
+        width: 100%;
+        left: 0;
+        top: 48px;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.5s, opacity 0.5s ease;
+    }
+    
+    .drop div {
+        position: relative;
+    }
+    
+    .drop li {
+        display: block;
+        padding: 0;
+        width: 100%;
+        background: #404040 !important;
+    }
+    
+    /* Hover effect for Select Day */
+    #main li:first-child:hover .drop {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    /* Staggered transition for buttons */
+    .drop .btn {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.5s, transform 0.5s;
+    }
+    
+    #main li:first-child:hover .btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Adding delays for staggered transition */
+    .drop div .btn:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+    
+    .drop div .btn:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+    
+    .drop div .btn:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+    
+    .drop div .btn:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+    
+    .drop div .btn:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+    
+    .drop div .btn:nth-child(6) {
+        transition-delay: 0.6s;
+    }
+    
+    .drop div .btn:nth-child(7) {
+        transition-delay: 0.7s;
+    }
+    
+    /* Marker styles */
+    #marker {
+        height: 6px;
+        background: #ffffff !important;
+        position: absolute;
+        bottom: 0;
+        width: 120px;
+        z-index: 2;
+        transition: all 0.35s;
+    }
+    
+    /* Button styles */
+    .btn {
+        width: 100px;
+        height: 60px;
+        border: 2px solid black;
+    }
+    
+    /* Navigation styles */
+    .day-nav {
+        display: flex;
+        justify-content: left;
+        margin-right: 1300px;
+        margin-top: 0px;
+    }
+    
+    .global-status-card-group-days {
+        margin-top: 30px;
+        margin-right: -70px;
+
+    }
+    
+    .location-name-display {
+        margin-top: -100px;
+    }
+
+    
+    .show-date-line {
+        color: white;
+        margin-bottom: 50px;
+        margin-left: 40px;
+        margin-right: 40px;
+        border: 2px solid rgb(110, 110, 110);
+    }
+    
+    .nav-item-7days {
+        color: rgb(255, 255, 255);
+        display: grid;
+        justify-content: end;
+        text-align: center;
+        padding-right: 40px;
+        align-items: center;
+    }
+    
+    .align-nav-bar-item-data-7days {
+        
+        border-radius: 20px;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        border: 3px solid white;
+        margin-top: 30px;
+        width: 30px;
+        width: 100px;
+    }
+
+    
+    .align-today-forecast-details{
+        height: 40px;
+        width: 40px; 
+        margin-left: 0px;
+    }
+    
+    .align-nav-bar-item-data-7days:hover {
+        background-color: rgb(0, 0, 0);
+        border: 3px solid rgb(68, 0, 255);
+    }
+    
+    .row {
+        margin-top: -40px;
+        margin-left: -20px;
+        width: 230px;
+    }
+    .home-view {
+        margin-left:80px;
+        width: 300px;
+        margin-top: auto; 
+        height: 2500px;
+        margin-top:50px
+    }
+
+    .global-status-card-group-days {
+        margin-left: 10px;
+
+    }
+
+    .col{
+        
+    }
+
+    .global-humidity{
+        
     }
 }
