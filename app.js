@@ -118,7 +118,7 @@ function loadForcast(cssbgColor, cssFontColor) {
 
                     firstHour.forEach(element => {
                         cardBody += `
-                <div class="col-sm-1 col">
+                <div class="col-sm-1 col-md-2 col-lg-2">
                     <div class="today-forecast" style="background-color:${cssbgColor}; color:${cssFontColor};border:2px solid ${cssFontColor};">
                         <p class="hours">${element.time.substr(11, 5)}</p>
                         <hr class="inner-line-today-forcast" style="color:${cssFontColor}; border:2px solid ${cssFontColor};">

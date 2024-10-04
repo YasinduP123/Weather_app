@@ -11,7 +11,7 @@ function btnSearchOnAction() {
     if (searchBar) {
         let climateHeaderGroupBody = `
             <h4 class="climate-header">Climate of ${searchBar}</h4>
-            <hr class="line-below-searchBar">
+            <hr class="border-3" style="color:white; border:2px solid white">
         `;
         txtLocation.innerHTML = climateHeaderGroupBody;
     } else {

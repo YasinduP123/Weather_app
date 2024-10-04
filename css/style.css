@@ -3,12 +3,6 @@ html,body {
     background-image: url('background.png');
     background-size: cover;
     background-position: center;
-    align-items: center;
-    justify-content: center;
-    margin-left:30px ;
-    display: flex;
-    justify-content: center;
-    justify-self: center;
     
 }
 
@@ -19,27 +13,17 @@ html,body {
 
 
 .home-view {
-
     background-color: rgba(0, 0, 0, 0.447);
-    width: 1307px;
-    height: 1112px;
     border-radius: 30px;
-    margin-bottom: 100px;
-    margin-top: 100px;
-    margin: 60px, 60px;
-    margin-left: 50px;
     border: 2px solid white;
     background-attachment: fixed;
-    margin-right: 80px;
 }
 
 .main-status-card {
     margin-top: 40px;
-    height: 400px;
-    width: 300px;
+
     background-color: rgba(0, 0, 0, 0.585);
     border-radius: 30px;
-    margin-left: 50px;
     border: 2px solid white;
 }
 
@@ -52,7 +36,8 @@ html,body {
 
 .wind-img {
     width: 150px;
-    margin-left: 80px;
+    justify-content: center;
+    display: flex;
 }
 
 .show-date {
@@ -79,14 +64,10 @@ html,body {
 
 
 .theme-changer {
-    margin-top: 40px;
-    width: 800px;
-    height: 40px;
-    display: flex;
+
     justify-content: end;
     margin-left: 80px;
     align-items: baseline;
-    margin-top: -400px;
 
 
 }
@@ -130,12 +111,11 @@ html,body {
 }
 
 .current-status{
-    margin-top: 500px;
+    margin-top: 550px;
     text-align: end;
     margin-right: 300px;
     margin-bottom: 60px;
     color: rgb(74, 68, 68);
-    font-size: 80px;
 }
 
 .hours{

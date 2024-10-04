@@ -12,11 +12,10 @@
 </head>
 
 <body>
-    <div class="home">
-        <div class="home-view" id="homeView">
+        <div class="container home-view" id="homeView">
             <table>
                 <tr>
-                    <div class="main-status-card">
+                    <div class="container main-status-card " >
                         <h2 class="show-temp" id="showCurrentTemp"></h2>
                         <img src="img/wind.png" class="wind-img" alt="">
                         <p class="wind-dir" id="currentWindDir"></p>
@@ -65,13 +64,13 @@
                 <div class="align-current-status" >
                     <tr>
                         <td>
-                            <h1 class="current-status" id="currentSituation"></h1>
+                            <p  class="current-status display-1" style="font-weight: 700;" id="currentSituation"></p>
                             <hr class="line-between-maincard-and-forecast">
                         </td>
                     </tr>
                 </div>
-                <div data-aos="fade-up" data-aos-anchor-placement="bottom-center">
-                    <div class="row hour-array" id="hourArray"></div>
+                <div class="container">
+                    <div class="row" id="hourArray"></div>
                 </div>
 
                 <div class="nav-bar">
@@ -79,8 +78,6 @@
                 </div>
         </div>
         </table>
-    </div>
-
     </div>
     </div>
 

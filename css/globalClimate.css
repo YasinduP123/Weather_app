@@ -2,15 +2,15 @@
   background-color: rgba(140, 136, 136, 0.575);
   padding: 20px;
   border-radius: 30px;
-  width: 600px;
-  margin-left: 600px;
-  margin-top: 40px;
+  width:700px;
+  margin-left: auto;
 }
 
 .search-bar {
   background-color: rgba(35, 33, 33, 0.241);
   border-radius: 30px;
-
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.482);
 }
 
 .search-bar::placeholder {
@@ -96,8 +96,4 @@ textarea:focus {
   width: 1000px;
   display: flex;
   justify-content: center;
-}
-
-.nav-bar-item{
-  margin-top: -100px;
 }

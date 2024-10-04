@@ -15,130 +15,112 @@
 </head>
 
 <body>
-    <div class="home">
-        <div class="home-view" id="homeView">
-            <table class="nav-item-7days" >
-                <tr class="nav-bar-item-adjust">
-                    <td>
-                        <button type="button" class="btn btn-outline-dark align-nav-bar-item-data-7days" id="btnHomeOnAction7Days"
-                            style="color:rgb(168, 161, 161);">Home</button>
-                    </td>
-                </tr>
-            </table>
-            <!-- not responsive yet -->
-            <nav class="day-nav">
-                
-                <ul id="main">
-                    <li>Select Day
-                        <ul class="drop">
-                            <div>
-                                <button class="btn btn-secondary" id="btnMondayOnAction">
-                                    Monday
-                                </button>
-                                <button class="btn btn-secondary" id="btnTuesdayOnAction">
-                                    Tuesday
-                                </button>
-                                <button class="btn btn-secondary" id="btnWednesdayOnAction">
-                                    Wednesday
-                                </button>
-                                <button class="btn btn-secondary" id="btnThursdayOnAction">
-                                    Thursday
-                                </button>
-                                <button class="btn btn-secondary" id="btnFridayOnAction">
-                                    Friday
-                                </button>
-                                <button class="btn btn-secondary" id="btnSaturdayOnAction">
-                                    Saturday
-                                </button>
-                                <button class="btn btn-secondary" id="btnSundayOnAction">
-                                    Sunday
-                                </button>
-                            </div>
-                        </ul>
-                    </li>
-                    <div id="marker"></div>
-                </ul>
-            </nav>
-            <div class="nav-bar-align" style="margin-top: 100px;">
-            </div>
-            <div class="location-name-display" id="">
+    <div class="home-view">
+    <button type="button" class="btn btn-dark w-76" id="btnHomeOnAction7Days"
+        style="color:rgb(255, 255, 255);">Home</button>
+
+    <div style="margin-left: auto;" class="container" id="homeView">
+        <div class="dropdown">
+            <a class="btn btn-dark dropdown-toggle border-white" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Select Day
+            </a>
+
+            <ul class="dropdown-menu bg-black">
+                <li><a class="dropdown-item  text-light" id="btnMondayOnAction">Monday</a></li>
+                <li><a class="dropdown-item  text-light" id="btnTuesdayOnAction">Tuesday</a></li>
+                <li><a class="dropdown-item  text-light" id="btnWednesdayOnAction">Wednesday</a></li>
+                <li><a class="dropdown-item  text-light" id="btnThursdayOnAction">Thursday</a></li>
+                <li><a class="dropdown-item  text-light" id="btnFridayOnAction">Friday</a></li>
+                <li><a class="dropdown-item  text-light" id="btnSaturdayOnAction">Saturday</a></li>
+                <li><a class="dropdown-item  text-light" id="btnSundayOnAction">Sunday</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="location-name-display text-white" id="">
                 <h1 class="show-date-select" id="showDateSelected"></h1>
                 <hr class="show-date-line">
             </div>
-            
-
-            <div class="global-status-card-group-days">
-                <div class="row">
-                    <div class=" col-md-4 col-lg-2">
-                        <div class="global-humidity">
-                            <h2 class="status-humidity">Humidity (Average)</h2>
-                            <hr style="border : 2px solid white">
-                            <div class="align-today-forecast-details" >
-                                <h1 class="humidity-percentage" id="daysHumidityPercentage"></h1>
+            <div class="row text-light">
+                <div class="row text-light">
+                    <div class="card-group">
+                        <div class="card m-2" style="background-color: rgba(0, 0, 0, 0.697);" style="color: white;">
+                            <img src="img/humidity.png" class="card-img-top" alt="..." style="height: auto;width: 100px;">
+                            <div class="card-body " style="color: white;">
+                                <hr>
+                                <h5 class="card-title" style="color: white; font-size: 25px;">Humidity</h5>
+                                <p class="card-text" style="color: white; font-size: 22px;" id="daysHumidityPercentage"></p>
+                                <!-- <p  class="card-text" ><small  class="text-light">Last updated 3 mins ago</small></p> -->
                             </div>
-                            <img src="img/humidity.png" alt="Humidity Icon" height="100px"
-                                style="">
                         </div>
-                    </div>
-                    <div class=" col-md-4 col-lg-2">
-                        <div class="global-humidity">
-                            <h2 class="status-humidity">UV Index</h2>
-                            <hr style="border : 2px solid white">
-                            <div  class="align-today-forecast-details">
-                                <h1 class="humidity-percentage" id="daysUvIndex"></h1>
+                        <div class="card m-2" style="background-color: rgba(0, 0, 0, 0.697);" style="color: white;">
+                            <img src="img/uvIndex.png" class="card-img-top" alt="..." style="height: auto;width: 100px;">
+                            <div class="card-body " style="color: white;">
+                                <h5 class="card-title" style="color: white; font-size: 25px;">Uv Index</h5>
+                                <hr>
+                                <p class="card-text" style="color: white; font-size: 22px;" id="daysUvIndex"></p>
+    
+                                <!-- <p  class="card-text" ><small  class="text-light">Last updated 3 mins ago</small></p> -->
                             </div>
-                            <img src="img/uvIndex.png" alt="Humidity Icon" height="100px">
                         </div>
-                    </div>
-                    <div class=" col-md-4 col-lg-2">
-                        <div class="global-humidity">
-                            <h2 class="status-humidity">Temperature (Average)</h2>
-                            <hr style="border : 2px solid white">
-                            <div  class="align-today-forecast-details">
-                                <h1 class="humidity-percentage" id="daysTemperature"></h1>
+                        <div class="card m-2" style="background-color: rgba(0, 0, 0, 0.697);" style="color: white;">
+                            <img src="img/thermometer.png" class="card-img-top" alt="..."
+                                style="height: auto;width: 100px;">
+                            <div class="card-body " style="color: white;">
+                                <h5 class="card-title" style="color: white; font-size: 25px;">Temperature</h5>
+                                <hr>
+                                <p class="card-text" style="color: white; font-size: 22px;" id="daysTemperature"></p>
+    
+                                <!-- <p class="card-text" ><small  class="text-light">Last updated 3 mins ago</small></p> -->
                             </div>
-                            <img src="img/thermometer.png" alt="" height="100px" style="">
                         </div>
-                    </div>
-                    <div class="col-md-4 col-lg-2">
-                        <div class="global-humidity">
-                            <h2 class="status-humidity">Wind Speed (Maximum)</h2>
-                            <hr style="border : 2px solid white">
-                            <div  class="align-today-forecast-details">
-                                <h1 class="humidity-percentage" id="daysWindSpeed"></h1>
+                        <div class="card m-2" style="background-color: rgba(0, 0, 0, 0.697);" style="color: white;">
+                            <img src="img/wind.png" class="card-img-top" alt="..." style="height: auto;width: 100px;">
+                            <div class="card-body " style="color: white;">
+                                <h5 class="card-title" style="color: white; font-size: 25px;">Wind</h5>
+                                <hr>
+                                <p class="card-text" style="color: white; font-size: 22px;" id="daysWindSpeed"></p>
+    
+                                <!-- <p class="card-text" ><small  class="text-light">Last updated 3 mins ago</small></p> -->
                             </div>
-                            <img src="img/wind.png" alt="" height="100px" style="margin-left: -50px;">
                         </div>
-                    </div>
-                    <div class=" col-md-4 col-lg-2">
-                        <div class="global-humidity">
-                            <h2 class="status-humidity"> Daily Chance of Rain</h2>
-                            <hr style="border : 2px solid white">
-                            <div class="align-today-forecast-details">
-                                <h1 class="humidity-percentage" id="dailyChanceToRain"></h1>
+                        <div class="card m-2" style="background-color: rgba(0, 0, 0, 0.697);" style="color: white;">
+                            <img src="img/rainChance.png" class="card-img-top" alt="..." style="height: auto;width: 100px;">
+                            <div class="card-body " style="color: white;">
+                                <h5 class="card-title" style="color: white; font-size: 25px;">Chance of rain
+                                    <hr>
+                                    <p class="card-text" style="color: white; font-size: 22px;" id="dailyChanceToRain"></p>
+    
+                                    <!-- <p  class="card-text" ><small  class="text-light">Last updated 3 mins ago</small></p> -->
                             </div>
-                            <img src="img/rainChance.png" alt="" height="150px" style="margin-left: -30px;">
                         </div>
-                    </div>
-                    <div class="col-md-4 col-lg-2">
-                        <div class="global-humidity">
-                            <h2 class="status-humidity">Condition</h2>
-                            <hr style="border : 2px solid white">
-                            <div class="align-today-forecast-details">
-                                <h1 class="humidity-percentage" style="" id="daysCondition"></h1>
+                        <div class="card m-2" style="background-color: rgba(0, 0, 0, 0.697);" style="color: white;">
+                            <img src="" class="card-img-top" id="daysStatusIcon" alt="current status"
+                                style="height: auto;width: 100px;">
+                            <div class="card-body " style="color: white;">
+                                <h5 class="card-title" style="color: white; font-size: 25px;">Current Status</h5>
+                                <hr>
+                                <p class="card-text" style="color: white; font-size: 22px;" id="daysCondition"></p>
+    
+                                <!-- <p  class="card-text" ><small  class="text-light">Last updated 3 mins ago</small></p> -->
                             </div>
-                            <img src="" alt="" height="100px" style="" id="daysStatusIcon">
                         </div>
                     </div>
                 </div>
-                
+
+
             </div>
         </div>
-
     </div>
+    </div>
+
     </div>
 
     <script src="7Days.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
